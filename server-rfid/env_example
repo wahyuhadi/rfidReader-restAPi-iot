@@ -1,0 +1,12 @@
+# untuk JWT
+JWT_SECRET=yourSecretKey
+
+NODE_ENV='development'
+DB_DATABASE=DatabaseName
+DB_DRIVER=mysql
+DB_USERNAME=db_user
+DB_PASSWORD=null
+DB_HOST=127.0.0.1
+DB_PORT=3306
+HOST=0.0.0.0
+PORT=8000
