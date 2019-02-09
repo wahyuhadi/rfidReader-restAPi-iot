@@ -1,6 +1,6 @@
 
 echo "Auto Build ... "
-
+cp env_example .env
 if [[ $1 == 'migrate' ]]
 	then
 	echo "DB migration ..."
