@@ -8,25 +8,16 @@ module.exports = {
 				primaryKey: true,
 				type: Sequelize.INTEGER
 			},
-			nama: {
+			username: {
 				allowNull: false,
 				type: Sequelize.STRING,
 				unique: {
 					args: true,
-					msg: 'Email address already in use!'
+					msg: 'Username address already in use!'
 				},
 			},
 			uid: {
-				allowNull: false,
-				type: Sequelize.INTEGER,
-				unique: {
-					args: true,
-					msg: 'Uid address already in use!'
-				},
-			},
-			inDate: {
-				allowNull: false,
-				type: Sequelize.DATE
+				type:   Sequelize.STRING,
 			},
 			createdAt: {
 				allowNull: false,

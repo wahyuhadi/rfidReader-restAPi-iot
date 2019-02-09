@@ -1,22 +1,22 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
 	let jwt = require('jsonwebtoken');
-    let Bcrypt = require('bcrypt');
     let randomString = require('randomstring');
 	const users = sequelize.define('users', {
-		nama: {
+		username: {
+            allowNull: {
+                args: false,
+                msg: 'Username address is required'
+            },
             type: DataTypes.STRING,
-        },
-		uid: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-           
             unique: {
                 args: true,
-                msg: 'Uid address already in use!'
+                msg: 'Username address already in use!'
             }
         },
-		inData: DataTypes.DATE
+		uid: {
+            type:   DataTypes.STRING,
+        }
 	}, {
         paranoid: true
     });
@@ -24,10 +24,6 @@ module.exports = (sequelize, DataTypes) => {
 		// associations can be defined here
 	};
 
-
-	users.prototype.validPassword = function (password) {
-        return Bcrypt.compareSync(password, this.password);
-    };
 
     users.prototype.getJWT = function () {
         return jwt.sign({
